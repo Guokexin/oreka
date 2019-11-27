@@ -12,6 +12,7 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include "Utils.h"
 
 static log4cxx::LoggerPtr s_log = log4cxx::Logger::getLogger("codec.g729");
  
@@ -122,7 +123,7 @@ CStdString G729CodecDecoder::GetName()
 
 bool G729CodecDecoder::SupportsInputRtpPayloadType(int rtpPayloadType)
 {
-    return rtpPayloadType == 18;
+    return rtpPayloadType == pt_G729;
 }
 
 void G729CodecDecoder::CaptureEventIn(CaptureEventRef& event)
